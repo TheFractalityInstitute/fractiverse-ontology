@@ -42,9 +42,14 @@ This `v3.1` release includes major upgrades:
 
 ## 📂 Repository Contents
 
-ontology/ └── Fractiverse_Ontology_Unified_v3.1.ttl   # Main OWL ontology (Turtle syntax)
-
-LICENSE.txt      # Multi-license from the Fractality Institute (CC BY-SA 4.0 for this work) README.md        # This file docs/index.md    # GitHub Pages placeholder (optional documentation hub)
+fractiverse-ontology/
+├── ontology/
+│   └── Fractiverse_Ontology_Unified_v3.1.ttl
+├── docs/
+│   └── index.md               ← GitHub Pages intro (optional)
+├── LICENSE.txt                ← From your main repo
+├── README.md                  ← Custom for ontology, matching Institute tone
+└── .gitignore
 
 ---
 

@@ -46,9 +46,9 @@ fractiverse-ontology/
 ├── ontology/
 │   └──Fractiverse_Ontology_Unified_v3.1.ttl
 ├── docs/
-│   └── index.md              ←GitHub Pages intro (optional)
-├── LICENSE.txt                ← From your main repo
-├── README.md                  ← Custom for ontology, matching Institute tone
+│   └── index.md    
+├── LICENSE.txt 
+├── README.md            
 └── .gitignore
 
 ---

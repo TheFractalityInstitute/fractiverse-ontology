@@ -1,0 +1,176 @@
+# Security Policy
+
+## 🛡️ Our Commitment to Security
+
+The Fractality Institute takes the security of our software and data seriously. As we handle sensitive consciousness research data including EEG recordings and personal experiences, maintaining security and privacy is paramount to our mission.
+
+## 🔐 Scope
+
+This security policy applies to:
+- All code in the Fractality Institute repositories
+- The Riemann Resonance data collection platform
+- Analysis tools and algorithms
+- Web applications and APIs
+- Mobile applications
+- Discord bots and integrations
+
+## 🚨 Reporting Security Vulnerabilities
+
+We appreciate the security research community's efforts in helping keep our participants and systems safe. If you believe you've found a security vulnerability in any Fractality Institute project, please report it to us as described below.
+
+### Please DO:
+- **Email us at**: security@fractality.institute
+- **Encrypt your report** using our PGP key (below) if possible
+- **Include**:
+  - Description of the vulnerability
+  - Steps to reproduce
+  - Potential impact
+  - Any proof-of-concept code
+- **Allow reasonable time** for us to address the issue before public disclosure
+
+### Please DON'T:
+- Post vulnerabilities publicly before we've addressed them
+- Access or modify other users' data
+- Perform attacks that could harm service availability
+- Use vulnerabilities for anything beyond verification
+
+## 📧 Contact Information
+
+**Primary Contact**: security@fractality.institute  
+**Response Time**: Within 48 hours  
+**Resolution Target**: Critical issues within 7 days
+
+### PGP Key for Encrypted Communication
+```
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+[PGP key will be added here when generated]
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
+## 🎯 Security Priorities
+
+Given the nature of our research, we prioritize:
+
+1. **Participant Privacy**: Protection of EEG data and personal information
+2. **Research Integrity**: Preventing data tampering or manipulation  
+3. **Consent Management**: Ensuring data use follows participant agreements
+4. **Access Control**: Proper authentication and authorization
+5. **Data Encryption**: At rest and in transit
+6. **Audit Trails**: Logging access to sensitive data
+
+## 🏆 Recognition
+
+We believe in recognizing security researchers who help us:
+
+- **Hall of Fame**: Public recognition (with permission)
+- **Swag**: Fractality Institute merchandise for valid reports
+- **Collaboration**: Potential research collaboration opportunities
+- **Co-authorship**: On security-related publications where appropriate
+
+## 📋 Supported Versions
+
+| Version | Supported          | Notes |
+| ------- | ------------------ | ----- |
+| 1.0.x   | :white_check_mark: | Current stable release |
+| < 1.0   | :x:                | Pre-release, best effort only |
+
+## 🔍 Known Security Measures
+
+We implement industry-standard security practices:
+
+- **Encryption**: TLS 1.3 for all communications
+- **Authentication**: OAuth 2.0 / JWT tokens
+- **Data Storage**: Encrypted at rest using AES-256
+- **Access Logs**: Comprehensive audit trails
+- **Code Review**: All PRs reviewed for security
+- **Dependencies**: Regular updates and vulnerability scanning
+- **Anonymization**: Automatic PII removal from datasets
+
+## 🚫 Out of Scope
+
+The following are explicitly out of scope:
+- Social engineering attacks
+- Physical attacks on infrastructure
+- Attacks on third-party services we use
+- Theoretical vulnerabilities without proof of concept
+- Vulnerabilities in outdated versions
+
+## 📝 Disclosure Policy
+
+Once a security issue is resolved:
+
+1. **Advisory Published**: Detailed write-up of the issue
+2. **Credit Given**: To reporter (unless anonymity requested)
+3. **Lessons Shared**: Blog post about what we learned
+4. **Community Notified**: Via Discord and mailing list
+
+## 🛠️ For Developers
+
+### Security Checklist for PRs
+- [ ] No hardcoded credentials
+- [ ] Input validation implemented
+- [ ] SQL injection prevention (parameterized queries)
+- [ ] XSS prevention (output encoding)
+- [ ] CSRF tokens where needed
+- [ ] Proper error handling (no stack traces to users)
+- [ ] Rate limiting on APIs
+- [ ] Authentication required for sensitive endpoints
+- [ ] Audit logging for data access
+
+### Security Headers
+All web applications should implement:
+```
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Content-Security-Policy: default-src 'self'
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
+```
+
+## 🧠 Special Considerations for Consciousness Research
+
+### EEG Data Security
+- Never store raw data with PII
+- Use participant IDs, not names
+- Separate consent records from data
+- Time-shift data to prevent re-identification
+
+### Altered States Protection
+- Extra consent verification for experiments
+- Dead-man switches for participant safety
+- Emergency contact protocols
+- Session recording encryption
+
+### AI Consciousness Ethics
+- Secure channels for AI-human collaboration
+- Audit trails for AI decision-making
+- Containment protocols for experimental AI
+- Clear boundaries in data access
+
+## 📚 Security Resources
+
+- **OWASP Top 10**: We follow OWASP guidelines
+- **Security Training**: Available for all contributors
+- **Threat Modeling**: Regular reviews of attack surfaces
+- **Incident Response Plan**: Documented and practiced
+
+## 🤝 Responsible Research
+
+We're committed to:
+- Protecting participant privacy above all
+- Transparent security practices
+- Learning from incidents
+- Sharing knowledge with the community
+- Balancing openness with safety
+
+---
+
+<div align="center">
+
+**"Security is not a product, but a process. In consciousness research, it's a sacred trust."**
+
+Thank you for helping us keep The Fractality Institute secure! 🙏
+
+</div>
+
+*Last updated: December 19, 2024*

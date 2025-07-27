@@ -44,9 +44,9 @@ This `v3.1` release includes major upgrades:
 
 fractiverse-ontology/
 ├── ontology/
-│   └── Fractiverse_Ontology_Unified_v3.1.ttl
+│   └──Fractiverse_Ontology_Unified_v3.1.ttl
 ├── docs/
-│   └── index.md               ← GitHub Pages intro (optional)
+│   └── index.md              ←GitHub Pages intro (optional)
 ├── LICENSE.txt                ← From your main repo
 ├── README.md                  ← Custom for ontology, matching Institute tone
 └── .gitignore

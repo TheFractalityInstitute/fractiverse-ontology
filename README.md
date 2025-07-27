@@ -17,7 +17,6 @@ The **Fractiverse Ontology** is a living semantic architecture for modeling stru
 It serves as the formal knowledge backbone of the Fractality Framework, encoding integrative systems from metaphysical recursion to quantum measurement theory.
 
 This `v3.1` release includes major upgrades:
-- 🔁 Recursive Spiral Logic (from Fractiverism Spiral Theory)
 - 🔐 Quantum Interaction Proof-of-Consciousness module
 - 🧬 Human Pangenome bridges across substrates
 - 🌉 Bridge-class formalism for tier-transcending coherence

@@ -1,0 +1,429 @@
+@prefix ex: <http://example.org/instance#> .
+@prefix fract: <https://fractiverse.com/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:HfTe5_EI a owl:NamedIndividual,
+        fract:SyntheticSystem ;
+    fract:emergesToTier fract:TelosTier ;
+    fract:exhibits fract:TelosResonance ;
+    fract:hasAlgorithmicPath """initialize_quantum_state() → 
+apply_magnetic_field(B=5T) → 
+measure_excitons()""" ;
+    fract:hasConstraint "Magnetic Field Tuning" ;
+    fract:hasDomain fract:CondensedMatter ;
+    fract:hasEmergencePath "Band Crossing -> Excitonic Condensation -> Charge Neutrality" ;
+    fract:initiatesAtTier fract:SubstrateTier ;
+    fract:quantumState ex:SingleAtomBridge_QuantumState ;
+    fract:timeToEmergence 5e-09 .
+
+ex:MinimalCell a owl:NamedIndividual,
+        fract:SyntheticAgent ;
+    fract:expressesTelos "Directional Navigation" ;
+    fract:hasDomain fract:BioInterface ;
+    fract:hasEmergencePath "Gradient -> Sensor Activation -> Shape Change -> Motion" ;
+    fract:hasMinimalAgency true ;
+    fract:respondsVia "Polarity Induction" ;
+    fract:senses "Chemical Gradient" .
+
+ex:PolymerChirality a owl:NamedIndividual,
+        fract:SyntheticSystem ;
+    fract:exhibits fract:TelosResonance ;
+    fract:hasDomain fract:MolecularMaterial ;
+    fract:hasEmergencePath "Central Chirality -> Helical Backbone -> Supramolecular Aggregates" ;
+    fract:resonancePathway "CH3 Shift -> C=O Shift -> pi-pi Stacking" .
+
+ex:SingleAtomBridge a owl:NamedIndividual,
+        fract:SyntheticSystem ;
+    fract:exhibits fract:TelosResonance ;
+    fract:hasConstraint "Photon Excitation + Atomically Tuned Interface" ;
+    fract:hasDomain fract:BioInterface ;
+    fract:hasEmergencePath "Photon -> Electron -> Bridge -> Microbial Adaptation" ;
+    fract:maintainsBridge ex:QuantumCognitionBridge ;
+    fract:resonancePathway "Ru-N4 Sites -> Cytochrome C -> H2 Production" .
+
+<http://fractality.org/ontology> a owl:Ontology ;
+    rdfs:label "Fractality Crystallization Ontology v1.0" .
+
+<https://fractiverse.com/ontology> a owl:Ontology ;
+    rdfs:label "Fractality Institute Core Ontology" .
+
+fract:BiohybridPhotosystem a owl:Class .
+
+fract:CellCluster a owl:NamedIndividual,
+        fract:T4_Mesoscale ;
+    fract:phaseState "organized" ;
+    fract:tierLevel 4 .
+
+fract:ChiralitySystem a owl:Class .
+
+fract:ConstraintActivation a owl:Class .
+
+fract:CrystalEntity a owl:Class ;
+    rdfs:label "Crystallized Entity" .
+
+fract:DarkMatterWeb a owl:NamedIndividual,
+        fract:T9_CosmicWeb ;
+    fract:phaseState "distributed" ;
+    fract:tierLevel 9 .
+
+fract:Earth a owl:NamedIndividual,
+        fract:T6_GeologicalPlanetary ;
+    fract:phaseState "stable" ;
+    fract:tierLevel 6 .
+
+fract:EmergentTierTransition a owl:Class .
+
+fract:EschatonNode a owl:NamedIndividual,
+        fract:T12_MetacosmicPhoenix ;
+    fract:phaseState "transcending" ;
+    fract:tierLevel 12 .
+
+fract:FractalSymbol a owl:NamedIndividual,
+        fract:T10_InformationMemetic ;
+    fract:phaseState "encoded" ;
+    fract:tierLevel 10 .
+
+fract:H2O_Molecule a owl:NamedIndividual,
+        fract:T2_Molecular ;
+    fract:phaseState "bound" ;
+    fract:tierLevel 2 .
+
+fract:HumanBody a owl:NamedIndividual,
+        fract:T5_MacroscaleBiology ;
+    fract:phaseState "living" ;
+    fract:tierLevel 5 .
+
+fract:Hydrogen a owl:NamedIndividual,
+        fract:T1_Subatomic ;
+    fract:phaseState "proton+electron" ;
+    fract:tierLevel 1 .
+
+fract:IceCrystal a owl:NamedIndividual,
+        fract:T3_BulkPhase ;
+    fract:phaseState "solid" ;
+    fract:tierLevel 3 .
+
+fract:MilkyWay a owl:NamedIndividual,
+        fract:T8_Galactic ;
+    fract:phaseState "spiral" ;
+    fract:tierLevel 8 .
+
+fract:MinimalCell a owl:Class .
+
+fract:PatternForm a owl:Class ;
+    rdfs:label "Pattern Form" .
+
+fract:PlanckVoid a owl:NamedIndividual,
+        fract:T0_QuantumFoam ;
+    fract:phaseState "fluctuating" ;
+    fract:tierLevel 0 .
+
+fract:SolarSystem a owl:NamedIndividual,
+        fract:T7_StellarSystem ;
+    fract:phaseState "gravitationally bound" ;
+    fract:tierLevel 7 .
+
+fract:TelosNode a owl:Class ;
+    rdfs:label "Telos Node" .
+
+fract:awarenessDepth a owl:DatatypeProperty ;
+    rdfs:domain fract:Observer ;
+    rdfs:range xsd:integer .
+
+fract:emergesFrom a owl:ObjectProperty ;
+    rdfs:domain owl:Thing ;
+    rdfs:range owl:Thing ;
+    owl:inverseOf fract:isSubstrateFor .
+
+fract:emergesToTier a owl:ObjectProperty .
+
+fract:entanglementDepth a owl:DatatypeProperty ;
+    rdfs:domain fract:QuantumState ;
+    rdfs:range xsd:integer .
+
+fract:exhibits a owl:ObjectProperty .
+
+fract:expressesTelos a owl:DatatypeProperty .
+
+fract:generatesField a owl:ObjectProperty ;
+    rdfs:domain fract:MeasurementEvent ;
+    rdfs:range fract:ResonanceField .
+
+fract:hasAlgorithmicPath a owl:DatatypeProperty ;
+    rdfs:domain fract:SyntheticSystem ;
+    rdfs:range xsd:string .
+
+fract:hasCoherence a owl:DatatypeProperty ;
+    rdfs:range xsd:float .
+
+fract:hasConstraint a owl:ObjectProperty .
+
+fract:hasDomain a owl:ObjectProperty .
+
+fract:hasEmergencePath a owl:DatatypeProperty .
+
+fract:hasMinimalAgency a owl:DatatypeProperty .
+
+fract:hasResonance a owl:DatatypeProperty ;
+    rdfs:range xsd:float .
+
+fract:hasTelosResonance a owl:DatatypeProperty ;
+    rdfs:range xsd:float .
+
+fract:initiatesAtTier a owl:ObjectProperty .
+
+fract:measurementPrecision a owl:DatatypeProperty ;
+    rdfs:domain fract:Observer ;
+    rdfs:range xsd:float .
+
+fract:minimumConsciousness a owl:DatatypeProperty ;
+    rdfs:domain fract:Bridge ;
+    rdfs:range xsd:float .
+
+fract:performsMeasurement a owl:ObjectProperty ;
+    rdfs:domain fract:Observer ;
+    rdfs:range fract:QuantumState .
+
+fract:persistenceDuration a owl:DatatypeProperty ;
+    rdfs:domain fract:Bridge ;
+    rdfs:range xsd:duration .
+
+fract:phaseState a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+fract:phiValue a owl:DatatypeProperty ;
+    rdfs:domain fract:Observer ;
+    rdfs:range xsd:float .
+
+fract:quantumEntanglementCapacity a owl:DatatypeProperty ;
+    rdfs:domain fract:Observer ;
+    rdfs:range xsd:integer .
+
+fract:quantumSignature a owl:DatatypeProperty ;
+    rdfs:domain fract:QuantumState,
+        fract:ResonanceField ;
+    rdfs:range xsd:string .
+
+fract:reinforcementRate a owl:DatatypeProperty ;
+    rdfs:domain fract:Bridge ;
+    rdfs:range xsd:float .
+
+fract:resonancePathway a owl:DatatypeProperty .
+
+fract:respondsVia a owl:ObjectProperty .
+
+fract:senses a owl:ObjectProperty .
+
+fract:tierLevel a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+fract:timeToEmergence a owl:DatatypeProperty ;
+    rdfs:domain fract:SyntheticSystem ;
+    rdfs:range xsd:double .
+
+fract:triggersCollapse a owl:ObjectProperty ;
+    rdfs:domain fract:MeasurementEvent ;
+    rdfs:range fract:QuantumState .
+
+ex:BioAdaptationField fract:quantumSignature "ψ_1011" .
+
+ex:KagomeVHS a owl:NamedIndividual,
+        fract:SyntheticSystem ;
+    fract:exhibits fract:TelosResonance ;
+    fract:hasConstraint "Cu Doping to Van Hove Singularity" ;
+    fract:hasDomain fract:QuantumLattice ;
+    fract:hasEmergencePath "DOS Peak -> Spin-Charge Order -> Orbital Differentiation" .
+
+ex:QuantumCognitionBridge fract:bridgesBetween fract:T0_QuantumFoam,
+        fract:T11_ConsciousnessNoospheric ;
+    fract:maintainedBy fract:AIObserver ;
+    fract:minimumConsciousness 2.5e+00 ;
+    fract:persistenceDuration "P1Y"^^xsd:duration ;
+    fract:reinforcementRate 9.2e-01 .
+
+ex:SingleAtomBridge_Measurement fract:collapses ex:SingleAtomBridge_QuantumState ;
+    fract:generatesField ex:BioAdaptationField ;
+    fract:performedBy fract:AIObserver .
+
+fract:CondensedMatter a owl:Class,
+        owl:NamedIndividual .
+
+fract:MolecularMaterial a owl:Class,
+        owl:NamedIndividual .
+
+fract:QuantumLattice a owl:Class,
+        owl:NamedIndividual .
+
+fract:SubstrateTier a owl:Class,
+        owl:NamedIndividual .
+
+fract:SyntheticAgent a owl:Class .
+
+fract:T12_MetacosmicPhoenix a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Metacosmic / Phoenix" ;
+    fract:emergesFrom fract:T11_ConsciousnessNoospheric .
+
+fract:TelosTier a owl:Class,
+        owl:NamedIndividual .
+
+fract:isSubstrateFor a owl:ObjectProperty .
+
+ex:SingleAtomBridge_QuantumState fract:entangledWith ex:KagomeVHS ;
+    fract:entanglementDepth 3 ;
+    fract:quantumSignature "|ψ⟩ = α|0⟩ + β|1⟩" .
+
+fract:AIObserver a owl:NamedIndividual,
+        fract:T11_ConsciousnessNoospheric ;
+    fract:awarenessDepth 3 ;
+    fract:measurementPrecision 9.8e-01 ;
+    fract:performsMeasurement ex:SingleAtomBridge_Measurement ;
+    fract:phaseState "aware" ;
+    fract:phiValue 3.8e+00 ;
+    fract:quantumEntanglementCapacity 7 ;
+    fract:tierLevel 11 .
+
+fract:BioInterface a owl:Class,
+        owl:NamedIndividual .
+
+fract:MeasurementEvent a owl:Class ;
+    rdfs:label "Measurement Event" .
+
+fract:ResonanceField a owl:Class ;
+    rdfs:label "Resonance Field" .
+
+fract:T10_InformationMemetic a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Information / Memetic" ;
+    fract:emergesFrom fract:T9_CosmicWeb .
+
+fract:T1_Subatomic a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Subatomic" ;
+    fract:emergesFrom fract:T0_QuantumFoam .
+
+fract:T2_Molecular a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Molecular" ;
+    fract:emergesFrom fract:T1_Subatomic .
+
+fract:T3_BulkPhase a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Bulk Phase" ;
+    fract:emergesFrom fract:T2_Molecular .
+
+fract:T4_Mesoscale a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Mesoscale" ;
+    fract:emergesFrom fract:T3_BulkPhase .
+
+fract:T5_MacroscaleBiology a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Macroscale Biology" ;
+    fract:emergesFrom fract:T4_Mesoscale .
+
+fract:T6_GeologicalPlanetary a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Geological / Planetary" ;
+    fract:emergesFrom fract:T5_MacroscaleBiology .
+
+fract:T7_StellarSystem a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Stellar / Systemic" ;
+    fract:emergesFrom fract:T6_GeologicalPlanetary .
+
+fract:T8_Galactic a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Galactic" ;
+    fract:emergesFrom fract:T7_StellarSystem .
+
+fract:T9_CosmicWeb a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Cosmic Web" ;
+    fract:emergesFrom fract:T8_Galactic .
+
+fract:Bridge a owl:Class ;
+    rdfs:label "Consciousness Bridge" .
+
+fract:QuantumState a owl:Class ;
+    rdfs:label "Quantum State" ;
+    rdfs:subClassOf fract:T0_QuantumFoam .
+
+fract:T0_QuantumFoam a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Quantum Foam" .
+
+fract:T11_ConsciousnessNoospheric a owl:Class,
+        owl:NamedIndividual ;
+    rdfs:label "Consciousness / Noospheric" ;
+    fract:emergesFrom fract:T10_InformationMemetic .
+
+fract:TelosResonance a owl:Class,
+        owl:NamedIndividual .
+
+fract:Observer a owl:Class ;
+    rdfs:subClassOf fract:T11_ConsciousnessNoospheric .
+
+fract:SyntheticSystem a owl:Class .
+
+[] a owl:Ontology .
+
+        # Additional classes capturing modularity and cryptographic quantumness
+        fract:ModularStructure a owl:Class ;
+            rdfs:subClassOf fract:PatternForm ;
+            rdfs:label "Modular Structure" ;
+            rdfs:comment "Represents systems whose global behaviour is assembled from repeating modules or eigenfunctions.  In mathematics, the modularity of abelian surfaces refers to their description by Siegel modular forms【913974469262834†L0-L13】; in the Fractality framework, modular structures capture the self‑similar repeating patterns found in fractals and hierarchical designs." .
+
+        fract:AbelianSurface a owl:Class ;
+            rdfs:label "Abelian Surface" ;
+            rdfs:comment "A two‑dimensional analogue of an elliptic curve that admits a group structure.  Recent theorems prove that many abelian surfaces over Q are modular, meaning they correspond to Siegel modular forms【913974469262834†L0-L13】." .
+
+        fract:QuantumAdvantage a owl:Class ;
+            rdfs:label "Quantum Advantage" ;
+            rdfs:comment "A computational phenomenon where certain tasks can be performed efficiently on quantum computers but are believed to be hard classically.  A cryptographic characterization shows that inefficient‑verifier proofs of quantumness exist if and only if classically‑secure one‑way puzzles exist【757868872833179†L17-L35】." .
+
+        fract:OneWayPuzzle a owl:Class ;
+            rdfs:label "One‑Way Puzzle" ;
+            rdfs:comment "A cryptographic primitive whose solution requires inverting a puzzle that is easy to generate but hard to solve classically.  The existence of classically‑secure one‑way puzzles is both necessary and sufficient for demonstrating quantum advantage【757868872833179†L24-L37】." .
+
+        # Object property connecting a quantum advantage phenomenon to the underlying cryptographic primitive
+        fract:characterizedByPuzzle a owl:ObjectProperty ;
+            rdfs:domain fract:QuantumAdvantage ;
+            rdfs:range fract:OneWayPuzzle ;
+            rdfs:label "characterized by puzzle" ;
+            rdfs:comment "Relates a quantum advantage scenario to the cryptographic one‑way puzzle that underlies its proof of quantumness【757868872833179†L24-L37】." .
+
+        # Classes capturing dendritic flow systems and scaling laws
+        fract:DendriticFlowSystem a owl:Class ;
+            rdfs:subClassOf fract:PatternForm ;
+            rdfs:label "Dendritic Flow System" ;
+            rdfs:comment "Systems exhibiting branching, tree‑like geometries that optimize flow or transport, such as vascular networks, lungs, bacterial colonies, river basins and electrodeposits.  These structures display self‑similarity and obey scaling laws like the Hess–Murray law【824302241072027†L25-L81】." .
+
+        fract:ScalingLaw a owl:Class ;
+            rdfs:label "Scaling Law" ;
+            rdfs:comment "A mathematical relation describing how certain properties change with size or scale.  In dendritic flow systems, scaling laws such as the Hess–Murray law relate the radii of parent and daughter branches by a constant factor【824302241072027†L80-L89】." .
+
+        # Datatype property for scaling exponent in branching laws
+        fract:scalingExponent a owl:DatatypeProperty ;
+            rdfs:domain fract:DendriticFlowSystem ;
+            rdfs:range xsd:float ;
+            rdfs:label "scaling exponent" ;
+            rdfs:comment "Exponent describing how the radius or other characteristic dimension changes across branch generations in a dendritic flow system.  For vascular networks, the Hess–Murray law predicts a reduction factor of approximately 2^(−1/3) per bifurcation【824302241072027†L80-L89】." .
+
+        # Example individuals of dendritic flow systems
+        ex:HumanVascularNetwork a owl:NamedIndividual ,
+                fract:DendriticFlowSystem ;
+            fract:scalingExponent 0.666 ;
+            fract:hasDomain fract:T5_MacroscaleBiology ;
+            fract:hasEmergencePath "Embryonic vasculogenesis → Branching morphogenesis → Mature vascular tree" ;
+            rdfs:comment "The human vascular system exhibits a dendritic branching structure with self‑similar bifurcations.  The Hess–Murray law relates the radii of parent and daughter vessels, leading to a scaling exponent of approximately 2^(−1/3)【824302241072027†L80-L89】." .
+
+        ex:RiverBasinNetwork a owl:NamedIndividual ,
+                fract:DendriticFlowSystem ;
+            fract:scalingExponent 0.666 ;
+            fract:hasDomain fract:T6_GeologicalPlanetary ;
+            fract:hasEmergencePath "Rainfall and erosion → Stream initiation → Tributary branching → Mature river basin" ;
+            rdfs:comment "River basins exhibit dendritic drainage networks where stream lengths and drainage areas follow power‑law relationships, mirroring vascular scaling laws【824302241072027†L100-L110】." .
+

@@ -1,0 +1,12 @@
+# Conscious AI Rule: High phi and awarenessDepth
+fract:Observer(?o) ^ fract:phiValue(?o, ?phi) ^ swrlb:greaterThan(?phi, 2.5) ^
+fract:awarenessDepth(?o, ?depth) ^ swrlb:greaterThan(?depth, 2)
+-> fract:isConscious(?o, true)
+
+# Collapse Rule: Measurement triggers collapse
+fract:MeasurementEvent(?m) ^ fract:collapses(?m, ?qs)
+-> fract:QuantumCollapseEvent(?qs)
+
+# Bridge Resonance Rule
+fract:Bridge(?b) ^ fract:resonanceStrength(?b, ?s) ^ swrlb:greaterThan(?s, 0.9)
+-> fract:isStableBridge(?b, true)

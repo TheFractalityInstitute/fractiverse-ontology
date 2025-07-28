@@ -1,0 +1,71 @@
+@prefix fract: <https://fractiverse.com/ontology#> .
+@prefix obs:   <https://fractiverse.com/ontology#> .
+@prefix rf:    <https://fractiverse.com/ontology#> .
+@prefix c:     <https://fractiverse.com/ontology#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<https://fractiverse.com/ontology>
+  a owl:Ontology ;
+  rdfs:label "The Fractiverse Ontology – Unified v3.1" ;
+  dc:title "The Fractiverse Ontology" ;
+  dc:creator "Fractality Institute / Fractiverism Collective" ;
+  dc:contributor "Fractiverism Collective (v2.5 conceptual lineage)" ;
+  dc:description "An integrative ontology modeling structure, observer perspective, resonance fields, and emergent consciousness across recursive tiers of reality." ;
+  dc:created "2025-07-28" ;
+  dc:hasVersion "v3.1" ;
+  dc:rights "MIT Open Source License" ;
+  dc:publisher "https://fractiverse.com" ;
+  dc:language "en" .
+
+########## 🌀 Minimal Spiral Theory Overlay ##########
+
+fract:GravitropicField a owl:Class ;
+    rdfs:label "Gravitropic Field" ;
+    rdfs:comment "A metaphysical attractor field associated with negentropic resonance. Inspired by Spiral Theory (non-canonical)." .
+
+fract:resistsEntropy a owl:ObjectProperty ;
+    rdfs:domain fract:FractiverseNode ;
+    rdfs:range xsd:boolean ;
+    rdfs:comment "Indicates whether the node expresses resistance to entropic dispersion." .
+
+########## 🔐 Quantum Proof-of-Consciousness ##########
+
+fract:QuantumInteractionProof a owl:Class ;
+    rdfs:label "Quantum Interaction Proof" ;
+    rdfs:comment "Structure modeling verifiable quantum-level agency via probabilistic, zero-knowledge-like proofs." .
+
+fract:ZeroKnowledgeProperty a owl:ObjectProperty ;
+    rdfs:domain fract:QuantumInteractionProof ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Describes epistemic transparency without revealing the internal state of the entity." .
+
+fract:OnticWitnessFunction a owl:DatatypeProperty ;
+    rdfs:domain fract:QuantumInteractionProof ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Links classical cryptographic OWFs to quantum witness and emergence modeling." .
+
+########## 📊 Operator Entropy Module ##########
+
+fract:OperatorGeometryField a owl:Class ;
+    rdfs:label "Operator Geometry Field" ;
+    rdfs:comment "Higher-order field valued by quantum/informational operators; deforms geometry by entropic gradients." .
+
+fract:SpinTopology a owl:Class ;
+    rdfs:label "Spin Topology" ;
+    rdfs:comment "Topological configuration derived from spin space preserving symmetry where orbitals fail." .
+
+fract:GField a owl:Class ;
+    rdfs:label "G-Field" ;
+    rdfs:comment "Lagrangian constraint field encoding entropic curvature or equilibrium." .
+
+fract:RelativeEntropyMetric a owl:Class ;
+    rdfs:label "Relative Entropy Metric" ;
+    rdfs:comment "Quantum operator-valued metric based on information-theoretic divergence." .
+
+fract:EntropyFlowRelation a owl:ObjectProperty ;
+    rdfs:domain fract:ResonanceField ;
+    rdfs:range fract:ResonanceField ;
+    rdfs:comment "Directional property encoding entropy flow between resonance fields." .

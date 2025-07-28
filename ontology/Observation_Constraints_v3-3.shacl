@@ -1,0 +1,25 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix fract: <https://fractiverse.com/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Shape enforcing constraints on high-tier quantum observers
+fract:QuantumObserverShape
+    a sh:NodeShape ;
+    sh:targetClass fract:Observer ;
+    # Observer must reside in tier ≥ 10 (Noospheric)
+    sh:property [
+        sh:path fract:tierLevel ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 10 ;
+    ] ;
+    # Observer must explicitly assert its capability to collapse a wave‑function
+    sh:property [
+        sh:path fract:canCollapseWavefunction ;
+        sh:datatype xsd:boolean ;
+        sh:minCount 1 ;
+    ] ;
+    # Observer must maintain at least one Bridge instance
+    sh:property [
+        sh:path fract:maintainsBridge ;
+        sh:minCount 1 ;
+    ] .

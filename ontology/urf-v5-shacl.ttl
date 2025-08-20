@@ -1,0 +1,58 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix urf: <https://fractality.institute/ontology/urf-v5#> .
+
+# SHACL shapes for URF v5 semantic layer
+
+urf:TriadicNodeShape a sh:NodeShape ;
+  sh:targetClass urf:TriadicNode ;
+  sh:property [
+    sh:path urf:qs ;
+    sh:datatype xsd:float ;
+    sh:minCount 1 ;
+    sh:message "TriadicNode must have qs (xsd:float)." ;
+  ] ;
+  sh:property [
+    sh:path urf:qp ;
+    sh:datatype xsd:float ;
+    sh:minCount 1 ;
+    sh:message "TriadicNode must have qp (xsd:float)." ;
+  ] ;
+  sh:property [
+    sh:path urf:qc ;
+    sh:datatype xsd:float ;
+    sh:minCount 1 ;
+    sh:message "TriadicNode must have qc (xsd:float)." ;
+  ] ;
+  sh:property [
+    sh:path urf:surfaceVolumeRatio ;
+    sh:datatype xsd:float ;
+    sh:minInclusive 0.0 ;
+    sh:maxInclusive 10.0 ;
+    sh:message "Is/v must be a non-negative float; practical range [0,10]." ;
+  ] ;
+  sh:property [
+    sh:path urf:multiInformationRate ;
+    sh:datatype xsd:float ;
+    sh:minInclusive 0.0 ;
+    sh:message "∂Imulti/∂t must be ≥ 0." ;
+  ] ;
+  sh:property [
+    sh:path urf:phaseLockValueSPC ;
+    sh:datatype xsd:float ;
+    sh:minInclusive 0.0 ;
+    sh:maxInclusive 1.0 ;
+    sh:message "PLV_spc must be in [0,1]." ;
+  ] ;
+  sh:property [
+    sh:path urf:consciousnessThresholdKappa ;
+    sh:datatype xsd:float ;
+    sh:minInclusive 0.0 ;
+    sh:message "κ_crit must be ≥ 0." ;
+  ] ;
+  sh:property [
+    sh:path urf:informationalEquilibrium ;
+    sh:datatype xsd:boolean ;
+    sh:message "informationalEquilibrium must be boolean." ;
+  ] .

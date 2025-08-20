@@ -1,0 +1,118 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+@prefix fto:  <https://fractality.institute/ontology/fto#> .
+@prefix urf:  <https://fractality.institute/ontology/urf-v5#> .
+
+<https://fractality.institute/ontology/urf-v5>
+  a owl:Ontology ;
+  owl:versionInfo "5.0.0" ;
+  dcterms:title "URF v5 Semantic Alignment" ;
+  dcterms:creator "Fractality Institute" ;
+  dcterms:description "Semantic twin layer aligning the Fractal Trinity Ontology to the Unified Resonance Framework v5.0." ;
+  dcterms:license <https://opensource.org/licenses/MIT> ;
+  dcterms:references <https://github.com/TheFractalityInstitute/fractiverse-ontology> .
+
+### Core Classes
+
+urf:TriadicNode a owl:Class ;
+  rdfs:label "Triadic Node" ;
+  rdfs:comment "URF v5 triad of (qs, qp, qc) defining spatial, phase, and scale degrees of freedom (DOF)." .
+
+urf:PhaseState a owl:Class ;
+  rdfs:label "Phase State" ;
+  rdfs:comment "URF v5 phase classification based on surface-to-volume information ratio (Is/v)." .
+
+urf:Subcritical a urf:PhaseState ;
+  rdfs:label "Subcritical" ;
+  rdfs:comment "Is/v < 1: quantum/distributed regime." .
+
+urf:Critical a urf:PhaseState ;
+  rdfs:label "Critical" ;
+  rdfs:comment "Is/v ≈ 1: transition regime." .
+
+urf:Supercritical a urf:PhaseState ;
+  rdfs:label "Supercritical" ;
+  rdfs:comment "Is/v > 1: classical/crystallized regime." .
+
+### Object Properties
+
+urf:phaseState a owl:ObjectProperty ;
+  rdfs:domain urf:TriadicNode ;
+  rdfs:range urf:PhaseState ;
+  rdfs:label "phase state" ;
+  rdfs:comment "Links a Triadic Node to its phase classification." .
+
+### Data Properties (URF v5 operational/measurable terms)
+
+urf:qs a owl:DatatypeProperty ;
+  rdfs:domain urf:TriadicNode ;
+  rdfs:range xsd:float ;
+  rdfs:label "qs (spatial component)" ;
+  rdfs:comment "Spatial/position information component of the triadic node." .
+
+urf:qp a owl:DatatypeProperty ;
+  rdfs:domain urf:TriadicNode ;
+  rdfs:range xsd:float ;
+  rdfs:label "qp (phase component)" ;
+  rdfs:comment "Phase/coherence information component of the triadic node." .
+
+urf:qc a owl:DatatypeProperty ;
+  rdfs:domain urf:TriadicNode ;
+  rdfs:range xsd:float ;
+  rdfs:label "qc (scale component)" ;
+  rdfs:comment "Scale/hierarchical information component of the triadic node." .
+
+urf:surfaceVolumeRatio a owl:DatatypeProperty ;
+  rdfs:range xsd:float ;
+  rdfs:label "Is/v" ;
+  rdfs:comment "Surface-to-volume information ratio for phase classification (URF v5)." .
+
+urf:multiInformationRate a owl:DatatypeProperty ;
+  rdfs:range xsd:float ;
+  rdfs:label "∂Imulti/∂t" ;
+  rdfs:comment "Rate of change of multi-information (URF v5 time/emergence metric)." .
+
+urf:phaseLockValueSPC a owl:DatatypeProperty ;
+  rdfs:range xsd:float ;
+  rdfs:label "PLV_spc" ;
+  rdfs:comment "Tri-band phase locking value across γ-θ-α (URF v5 consciousness criterion)." .
+
+urf:consciousnessThresholdKappa a owl:DatatypeProperty ;
+  rdfs:range xsd:float ;
+  rdfs:label "κ_crit" ;
+  rdfs:comment "Consciousness threshold parameter κ_crit (URF v5)." .
+
+urf:triadicCouplingEta a owl:DatatypeProperty ;
+  rdfs:range xsd:float ;
+  rdfs:label "η (triadic coupling)" ;
+  rdfs:comment "Triadic coupling strength parameter η from URF v5 potential." .
+
+urf:nonMinimalCouplingXi a owl:DatatypeProperty ;
+  rdfs:range xsd:float ;
+  rdfs:label "ξ (non-minimal coupling)" ;
+  rdfs:comment "Non-minimal coupling parameter ξ_i used in URF v5 action." .
+
+urf:informationalEquilibrium a owl:DatatypeProperty ;
+  rdfs:range xsd:boolean ;
+  rdfs:label "informational equilibrium" ;
+  rdfs:comment "True when a region is in informational equilibrium (URF v5 GR limit)." .
+
+### Heuristic mapping from Trinity Ontology (FTO) categories to URF components
+# Note: These mappings are intentionally soft (SKOS) to preserve FTO pedagogy.
+
+fto:Energy a skos:Concept ;
+  skos:prefLabel "Energy" ;
+  skos:closeMatch urf:qs .
+
+fto:Information a skos:Concept ;
+  skos:prefLabel "Information" ;
+  skos:closeMatch urf:qp .
+
+fto:Structure a skos:Concept ;
+  skos:prefLabel "Structure" ;
+  skos:closeMatch urf:qc .

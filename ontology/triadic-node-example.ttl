@@ -1,0 +1,18 @@
+@prefix : <https://fractality.institute/examples/urf-v5#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix urf:  <https://fractality.institute/ontology/urf-v5#> .
+
+# Example instance demonstrating URF v5 annotations on a Triadic Node
+
+:node1 a urf:TriadicNode ;
+  urf:qs 0.62 ;
+  urf:qp 0.81 ;
+  urf:qc 0.55 ;
+  urf:surfaceVolumeRatio 1.0 ;
+  urf:multiInformationRate 0.35 ;
+  urf:phaseLockValueSPC 0.72 ;
+  urf:consciousnessThresholdKappa 0.30 ;
+  urf:informationalEquilibrium false ;
+  urf:phaseState urf:Critical .

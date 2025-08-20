@@ -1,0 +1,86 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+@prefix fto:  <https://fractality.institute/ontology/fto#> .
+@prefix urf:  <https://fractality.institute/ontology/urf-v6#> .
+@prefix ex:   <https://fractality.institute/examples/urf-v6#> .
+
+<https://fractality.institute/ontology/urf-v6>
+  a owl:Ontology ;
+  owl:versionInfo "6.0.0" ;
+  dcterms:title "URF v6 Semantic Alignment" ;
+  dcterms:creator "Fractality Institute" ;
+  dcterms:description "Semantic twin for URF v6: triadic node with U(1) phase, symmetric triadic potential, n-adic generalization, and continuous consciousness index." ;
+  dcterms:license <https://opensource.org/licenses/MIT> ;
+  dcterms:references <https://fractality.institute/docs/URF_v6_0.pdf> .
+
+### Core Classes
+
+urf:NAdicNode a owl:Class ;
+  rdfs:label "n-adic Node" ;
+  rdfs:comment "Generalization of triadic node to n components when triadic approximation fails." .
+
+urf:TriadicNode a owl:Class ;
+  rdfs:subClassOf urf:NAdicNode ;
+  rdfs:label "Triadic Node" ;
+  rdfs:comment "URF v6 node: (q_s, q_p, q_c) with q_p complex (U(1) charge)." .
+
+urf:Component a owl:Class ;
+  rdfs:label "Component" ;
+  rdfs:comment "An individual degree of freedom within an n-adic node." .
+
+### Object Properties
+
+urf:hasComponent a owl:ObjectProperty ;
+  rdfs:domain urf:NAdicNode ;
+  rdfs:range urf:Component ;
+  rdfs:label "has component" .
+
+urf:phaseState a owl:ObjectProperty ;
+  rdfs:domain urf:TriadicNode ;
+  rdfs:label "phase state" .
+
+### Data Properties
+
+urf:arity a owl:DatatypeProperty ;
+  rdfs:domain urf:NAdicNode ;
+  rdfs:range xsd:integer ;
+  rdfs:label "arity" ;
+  rdfs:comment "Number of components in an n-adic node." .
+
+# q_s, q_c real components
+urf:qs a owl:DatatypeProperty ; rdfs:domain urf:TriadicNode ; rdfs:range xsd:float ; rdfs:label "q_s" .
+urf:qc a owl:DatatypeProperty ; rdfs:domain urf:TriadicNode ; rdfs:range xsd:float ; rdfs:label "q_c" .
+
+# q_p complex: represent via real/imag and derived magnitude/phase
+urf:qpRe a owl:DatatypeProperty ; rdfs:domain urf:TriadicNode ; rdfs:range xsd:float ; rdfs:label "Re(q_p)" .
+urf:qpIm a owl:DatatypeProperty ; rdfs:domain urf:TriadicNode ; rdfs:range xsd:float ; rdfs:label "Im(q_p)" .
+urf:qpAbsSq a owl:DatatypeProperty ; rdfs:domain urf:TriadicNode ; rdfs:range xsd:float ; rdfs:label "|q_p|^2" .
+urf:qpPhase a owl:DatatypeProperty ; rdfs:domain urf:TriadicNode ; rdfs:range xsd:float ; rdfs:label "arg(q_p)" .
+
+# Measurables
+urf:surfaceVolumeRatio a owl:DatatypeProperty ; rdfs:range xsd:float ; rdfs:label "I_s/v" .
+urf:multiInformationRate a owl:DatatypeProperty ; rdfs:range xsd:float ; rdfs:label "∂I_multi/∂t" .
+urf:phaseLockValueSPC a owl:DatatypeProperty ; rdfs:range xsd:float ; rdfs:label "PLV_{γθ α}" .
+urf:consciousnessIndexC a owl:DatatypeProperty ; rdfs:range xsd:float ; rdfs:label "C(t)" .
+urf:kappaCrit a owl:DatatypeProperty ; rdfs:range xsd:float ; rdfs:label "κ_crit" .
+urf:eta a owl:DatatypeProperty ; rdfs:range xsd:float ; rdfs:label "η (triadic coupling)" .
+urf:etaPrime a owl:DatatypeProperty ; rdfs:range xsd:float ; rdfs:label "η' (offset triadic coupling)" .
+
+# Symmetry flags
+urf:hasU1Phase a owl:DatatypeProperty ; rdfs:range xsd:boolean ; rdfs:label "U(1) phase present" .
+
+# States
+urf:PhaseState a owl:Class ; rdfs:label "Phase State" .
+urf:Subcritical a urf:PhaseState .
+urf:Critical a urf:PhaseState .
+urf:Supercritical a urf:PhaseState .
+
+### Heuristic mapping preserved
+fto:Energy skos:closeMatch urf:qs .
+fto:Information skos:closeMatch urf:qpAbsSq .
+fto:Structure skos:closeMatch urf:qc .

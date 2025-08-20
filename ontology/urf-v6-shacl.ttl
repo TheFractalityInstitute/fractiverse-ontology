@@ -1,0 +1,27 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix urf: <https://fractality.institute/ontology/urf-v6#> .
+
+# Triadic node must either specify (qpRe, qpIm) or qpAbsSq
+urf:TriadicNodeShape a sh:NodeShape ;
+  sh:targetClass urf:TriadicNode ;
+  sh:property [ sh:path urf:qs ; sh:datatype xsd:float ; sh:minCount 1 ] ;
+  sh:property [ sh:path urf:qc ; sh:datatype xsd:float ; sh:minCount 1 ] ;
+  sh:or (
+    [ sh:and ( [ sh:property [ sh:path urf:qpRe ; sh:datatype xsd:float ; sh:minCount 1 ] ]
+               [ sh:property [ sh:path urf:qpIm ; sh:datatype xsd:float ; sh:minCount 1 ] ] ) ]
+    [ sh:property [ sh:path urf:qpAbsSq ; sh:datatype xsd:float ; sh:minCount 1 ] ]
+  ) ;
+  sh:property [ sh:path urf:surfaceVolumeRatio ; sh:datatype xsd:float ; sh:minInclusive 0.0 ] ;
+  sh:property [ sh:path urf:multiInformationRate ; sh:datatype xsd:float ; sh:minInclusive 0.0 ] ;
+  sh:property [ sh:path urf:phaseLockValueSPC ; sh:datatype xsd:float ; sh:minInclusive 0.0 ; sh:maxInclusive 1.0 ] ;
+  sh:property [ sh:path urf:consciousnessIndexC ; sh:datatype xsd:float ; sh:minInclusive 0.0 ; sh:maxInclusive 1.0 ] ;
+  sh:property [ sh:path urf:eta ; sh:datatype xsd:float ] ;
+  sh:property [ sh:path urf:etaPrime ; sh:datatype xsd:float ] ;
+  sh:property [ sh:path urf:hasU1Phase ; sh:datatype xsd:boolean ] .
+
+# n-adic nodes must declare arity >= 3
+urf:NAdicNodeShape a sh:NodeShape ;
+  sh:targetClass urf:NAdicNode ;
+  sh:property [ sh:path urf:arity ; sh:datatype xsd:integer ; sh:minInclusive 3 ; sh:minCount 1 ] .
